@@ -1,0 +1,40 @@
+name: 작업 (Task / Chore)
+description: 버전 업데이트, 설정 변경, 빌드/배포, 장비 작업 등 기능 개발이 아닌 작업입니다.
+title: "[Chore] "
+labels: ["chore"]
+type: Task
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: 할 일
+      description: 무엇을, 왜 해야 하는지 적어주세요.
+      placeholder: |
+        예)
+        [프론트] Node 18 → 20 업그레이드 (Node 18 지원 종료)
+        [백엔드] 운영 DB 커넥션 풀 20 → 50 (피크 시간에 커넥션 부족 에러 발생)
+        [네트워크] core-sw-01, 02 NX-OS 업그레이드 (보안 취약점 패치)
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건
+      description: 한 줄에 하나씩, 확인할 수 있는 형태로 적어주세요.
+      placeholder: |
+        예)
+        - [ ] [프론트] .nvmrc, Dockerfile, CI의 Node 버전을 20으로 변경, 빌드·테스트 통과
+        - [ ] [백엔드] 반영 후 하루 동안 커넥션 부족 에러 0건
+        - [ ] [네트워크] 작업 후 BGP 세션·인터페이스 상태가 작업 전과 같음
+
+  - type: textarea
+    id: caution
+    attributes:
+      label: 주의사항
+      description: 작업 시간, 서비스 중단 여부, 롤백 방법 등 미리 알아야 할 것이 있으면 적어주세요.
+      placeholder: |
+        예)
+        [프론트] 팀원 로컬 환경도 Node 20으로 바꿔야 하므로 머지 전에 공지
+        [백엔드] 문제가 생기면 커넥션 풀을 20으로 되돌리고 API 서버 재시작
+        [네트워크] 11/20 02:00~04:00 점검 시간에 작업, 장비당 약 10분 순단 → 고객 사전 공지
