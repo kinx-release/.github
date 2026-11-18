@@ -1,0 +1,27 @@
+name: 문서 작성/수정 (Documentation)
+description: README, API 문서, 구성도, 작업 가이드 등 문서를 새로 쓰거나 고칩니다.
+title: "[Docs] "
+labels: ["documentation"]
+type: Task
+body:
+  - type: input
+    id: target
+    attributes:
+      label: 대상 문서
+      description: 문서 경로나 링크를 적어주세요. 새 문서라면 어디에 두면 좋을지 적어주세요.
+      placeholder: "예) README.md의 '로컬 실행 방법' 섹션 / docs/api/servers.md / 위키 'IDC-B 구성도' 페이지"
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: 작성/수정할 내용
+      description: 무엇을 써야 하나요? 잘못된 내용이라면 무엇이 틀렸고 실제로는 어떤지, 관련 PR이나 이슈가 있으면 함께 적어주세요.
+      placeholder: |
+        예)
+        [프론트] README의 실행 명령이 npm 기준 → 지금은 pnpm 사용 (pnpm install, pnpm dev), PR #123
+        [백엔드] API 문서의 GET /v1/servers 응답 예시에 새로 추가된 status 필드가 빠져 있음
+        [네트워크] IDC-B 구성도가 10월 회선 증설 전 기준 → 추가된 10G 업링크 2회선 반영 필요 (#87)
+    validations:
+      required: true

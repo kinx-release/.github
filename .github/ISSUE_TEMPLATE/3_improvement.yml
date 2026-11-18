@@ -1,0 +1,31 @@
+name: 개선 (Improvement)
+description: 이미 있는 기능의 사용성, 성능, 안정성, 코드 품질 등을 개선합니다.
+title: "[Improve] "
+labels: ["improvement"]
+type: Feature
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: 현재 상태
+      description: 지금은 어떻게 동작하고, 무엇이 아쉬운가요? 수치가 있으면 함께 적어주세요.
+      placeholder: |
+        예)
+        [프론트] 서버가 500대 이상인 고객은 서버 목록 화면이 3초 이상 멈춤
+        [백엔드] 트래픽 조회 API가 조회 기간이 3개월을 넘으면 10초 이상 걸림
+        [네트워크] 장비 설정 백업을 매주 수동으로 하고 있어 누락이 생김 (지난달 2건)
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 개선 방향 / 완료 조건
+      description: 어떻게 바뀌면 되는지 확인할 수 있는 형태로 한 줄에 하나씩 적어주세요. 기존 동작이 달라지는 점이 있으면 함께 적어주세요.
+      placeholder: |
+        예)
+        - [ ] [프론트] 50개씩 나눠 불러오기, 서버 1,000대인 고객도 첫 화면 1초 이내
+        - [ ] [백엔드] 일별 집계 테이블 사용, 1년치 조회도 2초 이내 (응답 형식은 그대로)
+        - [ ] [네트워크] 매일 새벽 전체 장비 설정 자동 백업, 실패한 장비는 담당자에게 알림
+    validations:
+      required: true
